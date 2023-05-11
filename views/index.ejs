@@ -1,0 +1,34 @@
+<%- include('./partials/head.ejs') %>
+<body>
+	
+
+	
+    <%- include('./partials/nav.ejs') %>
+
+	<main>
+		<h1>The Blogs available</h1>
+					
+		<% if(blogs.length>0) %>
+       <% {  %>
+
+					<% blogs.forEach(blog=>{  %>
+						<a href="/blogs/<%=blog._id %>" class="anker">
+							<div class="inner-div">
+						<h1 class="title"><%=blog.title %></h1>
+						<p class="snippet"><%=blog.snippet %></p>
+						<p class="snippet"><%=blog.body%></p>
+						  <a href="/blogs/delete/<%=blog._id %>"><button id="delb">Delete</button></a>
+					</div>
+	 
+				</a>
+						<%})%>
+
+
+		<%}%>
+		
+	</main>
+
+	<%- include('./partials/footer.ejs') %>
+
+</body>
+</html>
